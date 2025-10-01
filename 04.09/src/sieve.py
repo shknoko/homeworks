@@ -17,7 +17,7 @@ def sieve(n: int) -> list[int]:
 
     Returns:
         list[int]: список простых чисел до n
-    """     
+    """
 
     if n < 2:
         return []
@@ -30,7 +30,7 @@ def sieve(n: int) -> list[int]:
     for i in range((isqrt(n) - 1) // 2 + 1):
         if is_prime[i]:
             num = 2 * i + 3
-            for j in range((num ** 2 - 3) // 2, num_count, num):
+            for j in range((num**2 - 3) // 2, num_count, num):
                 is_prime[j] = False
 
     return [2] + [2 * i + 3 for i, prime in enumerate(is_prime) if prime]
