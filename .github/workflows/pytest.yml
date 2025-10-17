@@ -1,5 +1,6 @@
 name: Run tests with pytest
 on:
+    push:
     pull_request:
 
 jobs:
