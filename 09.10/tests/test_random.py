@@ -1,10 +1,4 @@
-import sys
-from pathlib import Path
-
 import pytest
-
-sys.path.append(f"{Path(__file__).parent.parent}")
-
 from conftest import random_list  # noqa: F401
 from src.heap_sort import heap_sort
 
