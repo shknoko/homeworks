@@ -14,7 +14,7 @@ def curry(f: callable, arg_count: int) -> callable:
         else:
             raise ValueError(
                 "Общее количество аргументов больше нужного \
-                    (например, если передано слишком много аргументов в каком-то из вызовов)"
+(например, если передано слишком много аргументов в каком-то из вызовов)"
             )
 
     return curried
@@ -26,6 +26,12 @@ def uncurry(f: callable) -> callable:
 
     def uncurried(*args):
         res = f
+        if len(args) == 0:
+            try:
+                res = res()
+            except TypeError:
+                raise TypeError from TypeError
+
         for i in args:
             if not callable(res):
                 raise ValueError("Передано слишком много аргументов")
