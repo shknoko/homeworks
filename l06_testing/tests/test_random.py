@@ -1,5 +1,6 @@
 import pytest
-from src.heap_sort import heap_sort
+
+from l06_testing.src.heap_sort import heap_sort
 
 
 @pytest.mark.repeat(100)
