@@ -1,5 +1,4 @@
 import pytest
-from conftest import random_list  # noqa: F401
 from src.heap_sort import heap_sort
 
 
